@@ -13,6 +13,15 @@ export const ParamsSchema = z.object({
     }),
 })
 
+export const ErrorSchema = z.object({
+  code: z.number().openapi({
+    example: 400,
+  }),
+  message: z.string().openapi({
+    example: 'Bad Request',
+  }),
+})
+
 export const TodoSchema = z
   .object({
     id: z.string().openapi({
